@@ -18,7 +18,6 @@ const fetchData = async (url: string) => {
 
 window.onload = async () => {
   LOADER.style.display = "flex";
-  LOADER.style.top = "0";
   let categories = await fetchData(
     "https://api.chucknorris.io/jokes/categories"
   );
@@ -39,7 +38,6 @@ const init = (categories) => {
 
 const changeJoke = async (value: string) => {
   LOADER.style.display = "flex";
-  LOADER.style.top = "0";
   let result = await fetchData(
     `https://api.chucknorris.io/jokes/random?category=${value}`
   );
