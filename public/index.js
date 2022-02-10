@@ -18,7 +18,6 @@ const fetchData = (url) => __awaiter(void 0, void 0, void 0, function* () {
 });
 window.onload = () => __awaiter(void 0, void 0, void 0, function* () {
     LOADER.style.display = "flex";
-    LOADER.style.top = "0";
     let categories = yield fetchData("https://api.chucknorris.io/jokes/categories");
     init(categories);
 });
@@ -35,7 +34,6 @@ const init = (categories) => {
 };
 const changeJoke = (value) => __awaiter(void 0, void 0, void 0, function* () {
     LOADER.style.display = "flex";
-    LOADER.style.top = "0";
     let result = yield fetchData(`https://api.chucknorris.io/jokes/random?category=${value}`);
     addJokeToDocument(result.value, result.icon_url);
 });
